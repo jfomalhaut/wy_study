@@ -1,0 +1,16 @@
+1. webpack => 압축기
+2. babel => 번역기 (구문법->신문법)
+3. react
+
+1. 라이브러리 설치
+[webpack]
+npm i -D webpack webpack-cli webpack-dev-server
+
+[babel]
+npm i -D babel-loader @babel/core @babel/preset-env @babel/preset-react
+
+[react]
+npm i -s react react-router-dom react-dom
+
+2. webpack.config.js 작성
+=> 압축하는 방법

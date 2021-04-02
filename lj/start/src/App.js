@@ -19,7 +19,7 @@ function App() {
 			<Route path="/home" component={Home} />
 			<Route path="/list" component={List} />
 		</BrowserRouter>
-	)
+	);
 }
 
 export default App;
