@@ -41,3 +41,6 @@ function Printer() {
 }
 
 export default Printer;
+
+
+// Props로 사용해보기
