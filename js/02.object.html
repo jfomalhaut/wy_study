@@ -1,0 +1,26 @@
+<html>
+<body>
+	<h1>조던에 대해 궁금한 것을 입력해보세요.</h1>
+	<input type="text" id="keys" >
+	<button onclick="check()">확인</button>
+
+	<script>
+		var keys = document.querySelector('#keys');
+		var player = {
+			name: 'Jordan',
+			number: 23,
+			team: '시카고 불스',
+			from: 'USA',
+			position: '슈팅가드'
+		};
+
+		function check() {
+			var value = keys.value;
+			player['type'] = 'black';
+			console.log(player[value]);
+			keys.value = '';
+		}
+
+	</script>
+</body>
+</html>

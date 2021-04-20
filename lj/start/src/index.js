@@ -7,10 +7,14 @@ import Printer from './routers/Printer';
 import Phonebook from './routers/Phonebook';
 import Phonebook2 from './routers/Phonebook2';
 import Survey from './routers/Survey';
+import Radio from './routers/Radio';
+import Addr from './routers/Addr';
+import Custom from './routers/Custom';
+import Question from './routers/Question';
 
 const object = {
 	name: '포도',
 	price: 1000
 };
 
-ReactDOM.render(<Survey />, document.getElementById('root'));
+ReactDOM.render(<Question />, document.getElementById('root'));

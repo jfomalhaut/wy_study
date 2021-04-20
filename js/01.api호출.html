@@ -1,0 +1,48 @@
+<html>
+<body>
+	<button onclick="getDataByType('bank_list')">bank_list!</button>
+	<button onclick="getDataByType('company_list')">company_list!</button>
+	<h1 id="result"></h1>
+	<script>
+
+		const resultElement = document.querySelector('#result');
+
+		const getDataByType = async (name) => {
+			const trans = getAPI(name);
+			const result = await trans();
+			resultElement.innerHTML = result;
+		};
+
+		export const getAPI = (name) => {
+			return APIs[name];
+		};
+
+		// Database
+		const getBankList = () => {
+			return new Promise(resolve => {
+				setTimeout(() => {
+					resolve(['신한', '국민']);
+				}, 2000);
+			});
+		};
+
+		const getCompanyList = () => {
+			return new Promise(resolve => {
+				setTimeout(() => {
+					resolve(['삼성', '현대', '선경', '금성']);
+				}, 2000);
+			});
+		};
+
+		const APIs = {
+			bank_list: getBankList(params),
+			company_list: getCompanyList(params),
+			// bank_list: getBankList,
+			// bank_list: getBankList,
+			// bank_list: getBankList,
+			// bank_level: ['S', 'A', 'B'],
+		};
+
+	</script>
+</body>
+</html>
