@@ -11,10 +11,12 @@ import Radio from './routers/Radio';
 import Addr from './routers/Addr';
 import Custom from './routers/Custom';
 import Question from './routers/Question';
+import Pdf from './routers/Pdf';
+
 
 const object = {
 	name: '포도',
 	price: 1000
 };
 
-ReactDOM.render(<Question />, document.getElementById('root'));
+ReactDOM.render(<Pdf />, document.getElementById('root'));

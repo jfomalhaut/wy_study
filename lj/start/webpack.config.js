@@ -19,7 +19,20 @@ module.exports = {
 						presets: ["@babel/preset-env"]
 					}
 				}
-			}
+			},
+			{
+				test: /\.(pdf|jpg|png|gif|svg|ico|jpeg)$/,
+				use: [
+					{ 
+						loader: 'url-loader', 
+						options: {
+							limit: 1000,
+							fallback: 'file-loader',
+							name: 'assets/images/[name].[ext]'
+						}
+					}
+				]
+			},
 		]
 	}, 
 	resolve: {
