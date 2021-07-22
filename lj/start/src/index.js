@@ -12,6 +12,7 @@ import Addr from './routers/Addr';
 import Custom from './routers/Custom';
 import Question from './routers/Question';
 import Pdf from './routers/Pdf';
+import Reduce from './routers/Reduce';
 
 
 const object = {
@@ -19,4 +20,4 @@ const object = {
 	price: 1000
 };
 
-ReactDOM.render(<Pdf />, document.getElementById('root'));
+ReactDOM.render(<Reduce />, document.getElementById('root'));
