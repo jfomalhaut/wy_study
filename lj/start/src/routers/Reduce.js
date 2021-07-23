@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const DATA = ['포도', '사과', '귤'];
 const FRUITS = {
@@ -89,6 +89,8 @@ const TEMP2 = {
 };
 
 const Reduce = () => {
+	const [list, setList] = useState([]);
+
 	const study = () => {
 		const initValue = 0;
 		const total = CART.reduce((acc, cur, idx) => {
@@ -106,11 +108,21 @@ const Reduce = () => {
 			}
 		}, {});
 
-		const combineYear2 = HISTORY.reduce((acc, cur, idx) => {
-			return [
-				...acc,
-			]
+		setList(combineYear);
+
+		const combineYear2 = HISTORY.reduce((acc, cur) => {
+			const index = acc.map(item => item.year).indexOf(cur.year);
+			if (index === -1) {
+				return acc.concat({
+					year: cur.year,
+					records: [cur]
+				});
+			} else {
+				acc[index].records.concat(cur);
+				return acc;
+			}
 		}, []);
+		// console.log(combineYear2);
 	};
 
 	useEffect(() => {
@@ -121,25 +133,16 @@ const Reduce = () => {
 		<div>
 			<h1>Reduce 활용</h1>
 			<ul>
-				{Object.keys(TEMP2).map(item => (
+				{Object.keys(list).map(item => (
 					<li>
 						<label>{item}</label>
-						<ol>
-							{TEMP2[item].map(child => (
+						<ul>
+							{list[item].map(child => (
 								<li>{child.record}</li>
 							))}
-						</ol>
+						</ul>
 					</li>
 				))}
-				{/* {HISTORY.map(item => (
-					<li>[{item.year}] {item.record}</li>
-				))} */}
-				{/* {Object.values(FRUITS).map((item) => (
-					<li>{item}</li>
-				))} */}
-				{/* {DATA.map(item => (
-					<li>{item}</li>
-				))} */}
 			</ul>
 		</div>
 	);
